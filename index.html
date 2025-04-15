@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة ساعد الخيرية</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- خط Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">       1
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- الناف بار -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="جمعية الخير" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="">تبرع الآن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">مشاريعنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">قصص النجاح</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="openLoginModal()">تسجيل الدخول</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="profileIcon" onclick="openProfileModal()">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">بروفايلي</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="profileName"></p>
+                    <p id="profileEmail"></p>
+                    <h5>تفاصيل التبرعات:</h5>
+                    <ul id="donationDetails"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- السلايدر -->
+    <section class="mt-5">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="feeding.html">
+                        <img src="images/camp2.png" class="d-block  w-100" alt="Slide 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>مشروع إطعام الفقراء</h1>
+                            <p>تبرع الآن.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="campaigns.html">
+                        <img src="images/Housing2.png" class="d-block w-100" alt="Slide 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>برنامج الحملات</h1>
+                            <p>تبرع الآن،وشاركنا في الثواب .</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="housing.html">
+                        <img src="images/slider2.jpg" class="d-block w-100" alt="Slide 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>مشاريع الإسكان</h1>
+                            <p>شارك في لم شمل الاسر المحتاجة.</p>
+                            </div>
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- محتوى الصفحة -->
+     <!-- قسم من نحن -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="section-title">من نحن</h2>
+                <p class="section-text">
+                    مؤسسة ساعد منظمة غير ربحية تهدف إلى مساعدة المحتاجين وتحسين حياتهم من خلال مشاريع خيرية متنوعة. تأسست الجمعية في عام 2000 ومنذ ذلك الحين وهي تعمل على تقديم الدعم والمساعدة للأسر الفقيرة والمحتاجين في مختلف المحافظات.
+                </p>
+                <p class="section-text">
+                    رؤيتنا هي بناء مجتمع متكافل ومتعاون حيث يحصل الجميع على فرص متساوية في الحياة. نعمل على تحقيق ذلك من خلال تنفيذ مشاريع تنموية وخيرية تهدف إلى تحسين الظروف المعيشية والتعليمية والصحية للمحتاجين.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img src="images/logo.png" class="img-fluid" alt="من نحن">
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">مرحبًا بكم في مؤسسة ساعد</h1>
+        <p class="text-center mb-5">
+            مؤسسةساعد هي منظمة غير ربحية تهدف إلى مساعدة المحتاجين وتحسين حياتهم من خلال مشاريع خيرية متنوعة. تبرعك اليوم يمكن أن يغير حياة شخص ما.
+        </p>
+
+        <!-- شريط المحافظات -->
+        <div class="provinces-bar text-center mb-5" id="provincesBar">
+            <button class="btn btn-outline-success me-2" onclick="changeProvince('القاهرة')">القاهرة</button>
+            <button class="btn btn-outline-success me-2" onclick="changeProvince('الإسكندرية')">الإسكندرية</button>
+            <button class="btn btn-outline-success me-2" onclick="changeProvince('الجيزة')">الجيزة</button>
+            <button class="btn btn-outline-success me-2" onclick="changeProvince('المنصورة')">المنصورة</button>
+            <button class="btn btn-outline-success me-2" onclick="changeProvince('أسيوط')">أسيوط</button>
+            <button class="btn btn-outline-success" onclick="changeProvince('الأقصر')">الأقصر</button>
+        </div>
+
+        <div class="row" id="cardsContainer">
+        </div>
+    </div>
+        <!-- Card Details Modal -->
+    <div class="modal fade" id="cardDetailModal" tabindex="-1" aria-labelledby="cardDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="cardDetailModalLabel">تفاصيل المشروع</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalImage" src="" class="img-fluid" alt="Project Image">
+                        </div>
+                        <div class="col-md-6">
+                            <h2 id="modalTitle"></h2>
+                            <p id="modalDescription"></p>
+                            <div class="progress mb-3">
+                                <div id="modalProgressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p id="modalProgressText" class="card-text"><small class="text-muted">0% من الهدف</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal تسجيل الدخول -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">تسجيل الدخول / التسجيل</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">تسجيل الدخول</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">التسجيل</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="loginTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <form id="loginForm" onsubmit="return validateLoginForm()">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">كلمة المرور</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">تسجيل الدخول</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                        <form id="registerForm" onsubmit="return validateRegisterForm()">
+                            <div class="mb-3">
+                                <label for="registerName" class="form-label">الاسم الكامل</label>
+                                <input type="text" class="form-control" id="registerName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="registerEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">كلمة المرور</label>
+                                <input type="password" class="form-control" id="registerPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerConfirmPassword" class="form-label">تأكيد كلمة المرور</label>
+                                <input type="password" class="form-control" id="registerConfirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">التسجيل</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="donateButton" class="btn btn-success donate-button" onclick="openDonateModal()">تبرع الآن</button>
+
+<!-- Modal التبرع -->
+<div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="donateModalLabel">تبرع الآن</h5>
+            </div>
+            <div class="modal-body">
+                <form id="donateForm" onsubmit="return validateDonateForm()">
+                    <div class="mb-3">
+                        <label for="donateAmount" class="form-label">المبلغ</label>
+                        <input type="number" class="form-control" id="donateAmount" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="donateProvince" class="form-label">المحافظة</label>
+                        <select class="form-control" id="donateProvince" onchange="updateSections()" required>
+                            <option value="">اختر المحافظة</option>
+                            <option value="">اختر المحافظة</option>
+                            <option value="القاهرة">القاهرة</option>
+                            <option value="الإسكندرية">الإسكندرية</option>
+                            <option value="الجيزة">الجيزة</option>
+                            <option value="المنصورة">المنصورة</option>
+                            <option value="أسيوط">أسيوط</option>
+                            <option value="الأقصر">الأقصر</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="donateSection" class="form-label">القسم</label>
+                        <select class="form-control" id="donateSection" required>
+                            <option value="">اختر القسم</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="donateFrequency" class="form-label">نوع التبرع</label>
+                        <select class="form-control" id="donateFrequency" required>
+                            <option value="one-time">مرة واحدة</option>
+                            <option value="monthly">شهري</option>
+                            <option value="yearly">سنوي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">تبرع الآن</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="notification" class="alert alert-success" role="alert" style="display: none;">
+    المشروع اكتمل بنسبة 100%!
+</div>
+
+<!-- Profile Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="profileModalLabel">بروفايلي</h5>
+            </div>
+            <div class="modal-body">
+                <div id="profileContent">
+                    <p>يرجى تسجيل الدخول لعرض معلومات البروفايل.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <i class="fas fa-hand-holding-heart grid-icon"></i>
+                    <div class="grid-title">إجمالي التبرعات</div>
+                    <div class="grid-number" id="total-donations">0 ج.م</div>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-coins grid-icon"></i>
+                    <div class="grid-title">إجمالي التبرعات لعام 2025 حتى الآن</div>
+                    <div class="grid-number" id="year-donations">0 ج.م</div>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-user-check grid-icon"></i>
+                    <div class="grid-title">عدد المستفيدين</div>
+                    <div class="grid-number" id="beneficiaries">0 مستفيد</div>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-exchange-alt grid-icon"></i>
+                    <div class="grid-title">عدد عمليات التبرع</div>
+                    <div class="grid-number" id="donations-count">0 عملية</div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <br>
+                <div class="col-md-6" style="margin:auto;">
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-left footer-bottom-content">
+                        <img src="images/logo.png" alt="Logo" class="footer-logo">
+                        <span class="footer-rights">جميع الحقوق محفوظة لمؤسسة ساعد 2025</span>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook-f social-icon"></a>
+                            <a href="#" target="_blank" class="fab fa-x social-icon"></a>
+                            <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram social-icon"></a>
+                            <a href="https://www.youtube.com" target="_blank" class="fab fa-youtube social-icon"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button id="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+    <div id="chat-box" class="chat-box">
+        <div class="chat-header">
+            <span class="chat-title">الدردشة مع البوت</span>
+            <span class="chat-close" onclick="toggleChatBox()">×</span>
+        </div>
+        <div class="chat-content" id="chat-content">
+            <div class="message bot-message">مرحباً! كيف يمكنني مساعدتك؟</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-message" placeholder="اكتب رسالتك هنا...">
+            <button onclick="sendMessage()">إرسال</button>
+        </div>
+    </div>
+    <button class="chat-button" onclick="toggleChatBox()">💬</button>
+
+    <script>
+        const initialData = {
+            totalDonations: 94870,
+            yearDonations: 5358,
+            beneficiaries: 2636,
+            donationsCount: 55204
+        };
+
+        const elements = {
+            totalDonations: document.getElementById('total-donations'),
+            yearDonations: document.getElementById('year-donations'),
+            beneficiaries: document.getElementById('beneficiaries'),
+            donationsCount: document.getElementById('donations-count')
+        };
+
+        function formatNumberWithCommas(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        function animateValue(element, start, end, duration) {
+            let current = start;
+            const increment = Math.trunc((end - start) / duration * 10);
+            const timer = setInterval(() => {
+                current += increment;
+                if ((start < end && current > end) || (start > end && current < end)) {
+                    current = end;
+                }
+                element.textContent = formatNumberWithCommas(current) + (element === elements.beneficiaries ? " مستفيد" : element === elements.donationsCount ? " عملية" : "ج.م");
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, 10);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            animateValue(elements.totalDonations, 0, initialData.totalDonations, 200);
+            animateValue(elements.yearDonations, 0, initialData.yearDonations, 200);
+            animateValue(elements.beneficiaries, 0, initialData.beneficiaries, 200);
+            animateValue(elements.donationsCount, 0, initialData.donationsCount, 200);
+        });
+
+        document.getElementById('show-details').addEventListener('click', function () {
+            alert('سيتم عرض التفاصيل قريبًا!');
+        });
+
+        document.getElementById('show-details').addEventListener('click', function () {
+            window.open('details.html', '_blank');
+        });
+
+        function toggleChatBox() {
+            var chatBox = document.getElementById('chat-box');
+            chatBox.classList.toggle('show');
+        }
+
+        function sendMessage() {
+            var userMessage = document.getElementById('user-message').value;
+            if (userMessage.trim() === "") return;
+
+            var chatContent = document.getElementById('chat-content');
+            var userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user-message';
+            userMessageDiv.innerText = userMessage;
+            chatContent.appendChild(userMessageDiv);
+
+            document.getElementById('user-message').value = '';
+
+            var botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot-message';
+            botMessageDiv.innerText = "شكرًا على رسالتك!";
+            chatContent.appendChild(botMessageDiv);
+
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="main.js"></script>
+</body>
+</html>
